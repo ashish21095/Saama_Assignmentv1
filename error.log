@@ -1,0 +1,391 @@
+WARNING:root:app start!
+INFO:app:All db tables created
+WARNING:werkzeug: * Running on all addresses.
+   WARNING: This is a development server. Do not use it in a production deployment.
+INFO:werkzeug: * Running on http://192.168.43.185:5000/ (Press CTRL+C to quit)
+INFO:werkzeug:127.0.0.1 - - [03/Aug/2021 00:22:38] "[32mGET / HTTP/1.1[0m" 302 -
+DEBUG:requests_oauthlib.oauth1_session:Fetching token from https://api.twitter.com/oauth/request_token using client <Client client_key=FD5eYClWwPjaySPSfWK3JuYeU, client_secret=****, resource_owner_key=None, resource_owner_secret=None, signature_method=HMAC-SHA1, signature_type=AUTH_HEADER, callback_uri=None, rsa_key=None, verifier=None, realm=None, encoding=utf-8, decoding=utf-8, nonce=None, timestamp=None>
+DEBUG:requests_oauthlib.oauth1_auth:Signing request <PreparedRequest [POST]> using client <Client client_key=FD5eYClWwPjaySPSfWK3JuYeU, client_secret=****, resource_owner_key=None, resource_owner_secret=None, signature_method=HMAC-SHA1, signature_type=AUTH_HEADER, callback_uri=None, rsa_key=None, verifier=None, realm=None, encoding=utf-8, decoding=utf-8, nonce=None, timestamp=None>
+DEBUG:requests_oauthlib.oauth1_auth:Including body in call to sign: False
+DEBUG:oauthlib.oauth1.rfc5849:Collected params: [('oauth_nonce', '300088484638713311627930358'), ('oauth_timestamp', '1627930358'), ('oauth_version', '1.0'), ('oauth_signature_method', 'HMAC-SHA1'), ('oauth_consumer_key', 'FD5eYClWwPjaySPSfWK3JuYeU')]
+DEBUG:oauthlib.oauth1.rfc5849:Normalized params: oauth_consumer_key=FD5eYClWwPjaySPSfWK3JuYeU&oauth_nonce=300088484638713311627930358&oauth_signature_method=HMAC-SHA1&oauth_timestamp=1627930358&oauth_version=1.0
+DEBUG:oauthlib.oauth1.rfc5849:Normalized URI: https://api.twitter.com/oauth/request_token
+DEBUG:oauthlib.oauth1.rfc5849:Signing: signature base string: POST&https%3A%2F%2Fapi.twitter.com%2Foauth%2Frequest_token&oauth_consumer_key%3DFD5eYClWwPjaySPSfWK3JuYeU%26oauth_nonce%3D300088484638713311627930358%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1627930358%26oauth_version%3D1.0
+DEBUG:oauthlib.oauth1.rfc5849:Signature: bP8MxgeSY03NiPlCz5buqahrewI=
+DEBUG:oauthlib.oauth1.rfc5849:Encoding URI, headers and body to utf-8.
+DEBUG:requests_oauthlib.oauth1_auth:Updated url: https://api.twitter.com/oauth/request_token
+DEBUG:requests_oauthlib.oauth1_auth:Updated headers: {b'User-Agent': b'python-requests/2.25.1', b'Accept-Encoding': b'gzip, deflate', b'Accept': b'*/*', b'Connection': b'keep-alive', b'Content-Length': b'0', b'Authorization': b'OAuth oauth_nonce="300088484638713311627930358", oauth_timestamp="1627930358", oauth_version="1.0", oauth_signature_method="HMAC-SHA1", oauth_consumer_key="FD5eYClWwPjaySPSfWK3JuYeU", oauth_signature="bP8MxgeSY03NiPlCz5buqahrewI%3D"'}
+DEBUG:requests_oauthlib.oauth1_auth:Updated body: None
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.twitter.com:443
+DEBUG:urllib3.connectionpool:https://api.twitter.com:443 "POST /oauth/request_token HTTP/1.1" 200 128
+DEBUG:requests_oauthlib.oauth1_session:Decoding token from response "oauth_token=XZVlEQAAAAABR-1AAAABewg1_U0&oauth_token_secret=NLxvjwKTJz7YmPie93TpCFgCbStOQilJ&oauth_callback_confirmed=true"
+DEBUG:requests_oauthlib.oauth1_session:Obtained token {'oauth_token': 'XZVlEQAAAAABR-1AAAABewg1_U0', 'oauth_token_secret': 'NLxvjwKTJz7YmPie93TpCFgCbStOQilJ', 'oauth_callback_confirmed': 'true'}
+DEBUG:requests_oauthlib.oauth1_session:Updating internal client attributes from token data.
+DEBUG:requests_oauthlib.oauth1_session:Resetting callback_uri and realm (not needed in next phase).
+DEBUG:requests_oauthlib.oauth1_session:Adding parameters {'oauth_token': 'XZVlEQAAAAABR-1AAAABewg1_U0'} to url https://api.twitter.com/oauth/authorize
+INFO:app:https://api.twitter.com/oauth/authorize?oauth_token=XZVlEQAAAAABR-1AAAABewg1_U0
+INFO:werkzeug:127.0.0.1 - - [03/Aug/2021 00:22:39] "[32mGET /twitter_auth HTTP/1.1[0m" 302 -
+INFO:app:oauth_tok=XZVlEQAAAAABR-1AAAABewg1_U0 oauth_ver=ICWI3TAk3cQauo2YqqeDfJEqnxnBGSXP
+INFO:app:Tweets loaded in the database
+DEBUG:tweepy.binder:PARAMS: {}
+DEBUG:requests_oauthlib.oauth1_auth:Signing request <PreparedRequest [GET]> using client <Client client_key=FD5eYClWwPjaySPSfWK3JuYeU, client_secret=****, resource_owner_key=1418783442070769664-QLyopesfXnSG1IdPVzClg7Iyg2nKdC, resource_owner_secret=****, signature_method=HMAC-SHA1, signature_type=AUTH_HEADER, callback_uri=None, rsa_key=None, verifier=None, realm=None, encoding=utf-8, decoding=None, nonce=None, timestamp=None>
+DEBUG:requests_oauthlib.oauth1_auth:Including body in call to sign: False
+DEBUG:oauthlib.oauth1.rfc5849:Collected params: [('oauth_nonce', '21665290281680331381627930363'), ('oauth_timestamp', '1627930363'), ('oauth_version', '1.0'), ('oauth_signature_method', 'HMAC-SHA1'), ('oauth_consumer_key', 'FD5eYClWwPjaySPSfWK3JuYeU'), ('oauth_token', '1418783442070769664-QLyopesfXnSG1IdPVzClg7Iyg2nKdC')]
+DEBUG:oauthlib.oauth1.rfc5849:Normalized params: oauth_consumer_key=FD5eYClWwPjaySPSfWK3JuYeU&oauth_nonce=21665290281680331381627930363&oauth_signature_method=HMAC-SHA1&oauth_timestamp=1627930363&oauth_token=1418783442070769664-QLyopesfXnSG1IdPVzClg7Iyg2nKdC&oauth_version=1.0
+DEBUG:oauthlib.oauth1.rfc5849:Normalized URI: https://api.twitter.com/1.1/account/verify_credentials.json
+DEBUG:oauthlib.oauth1.rfc5849:Signing: signature base string: GET&https%3A%2F%2Fapi.twitter.com%2F1.1%2Faccount%2Fverify_credentials.json&oauth_consumer_key%3DFD5eYClWwPjaySPSfWK3JuYeU%26oauth_nonce%3D21665290281680331381627930363%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1627930363%26oauth_token%3D1418783442070769664-QLyopesfXnSG1IdPVzClg7Iyg2nKdC%26oauth_version%3D1.0
+DEBUG:oauthlib.oauth1.rfc5849:Signature: /JHoGjcvpcqsLEfic+dyZAT/EsQ=
+DEBUG:requests_oauthlib.oauth1_auth:Updated url: https://api.twitter.com/1.1/account/verify_credentials.json
+DEBUG:requests_oauthlib.oauth1_auth:Updated headers: {'Host': 'api.twitter.com', 'Authorization': 'OAuth oauth_nonce="21665290281680331381627930363", oauth_timestamp="1627930363", oauth_version="1.0", oauth_signature_method="HMAC-SHA1", oauth_consumer_key="FD5eYClWwPjaySPSfWK3JuYeU", oauth_token="1418783442070769664-QLyopesfXnSG1IdPVzClg7Iyg2nKdC", oauth_signature="%2FJHoGjcvpcqsLEfic%2BdyZAT%2FEsQ%3D"'}
+DEBUG:requests_oauthlib.oauth1_auth:Updated body: None
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.twitter.com:443
+DEBUG:urllib3.connectionpool:https://api.twitter.com:443 "GET /1.1/account/verify_credentials.json HTTP/1.1" 200 1979
+DEBUG:tweepy.binder:PARAMS: {'screen_name': b'AshishKumarPil1'}
+DEBUG:requests_oauthlib.oauth1_auth:Signing request <PreparedRequest [GET]> using client <Client client_key=FD5eYClWwPjaySPSfWK3JuYeU, client_secret=****, resource_owner_key=1418783442070769664-QLyopesfXnSG1IdPVzClg7Iyg2nKdC, resource_owner_secret=****, signature_method=HMAC-SHA1, signature_type=AUTH_HEADER, callback_uri=None, rsa_key=None, verifier=None, realm=None, encoding=utf-8, decoding=None, nonce=None, timestamp=None>
+DEBUG:requests_oauthlib.oauth1_auth:Including body in call to sign: False
+DEBUG:oauthlib.oauth1.rfc5849:Collected params: [('screen_name', 'AshishKumarPil1'), ('oauth_nonce', '129095723389477890821627930364'), ('oauth_timestamp', '1627930364'), ('oauth_version', '1.0'), ('oauth_signature_method', 'HMAC-SHA1'), ('oauth_consumer_key', 'FD5eYClWwPjaySPSfWK3JuYeU'), ('oauth_token', '1418783442070769664-QLyopesfXnSG1IdPVzClg7Iyg2nKdC')]
+DEBUG:oauthlib.oauth1.rfc5849:Normalized params: oauth_consumer_key=FD5eYClWwPjaySPSfWK3JuYeU&oauth_nonce=129095723389477890821627930364&oauth_signature_method=HMAC-SHA1&oauth_timestamp=1627930364&oauth_token=1418783442070769664-QLyopesfXnSG1IdPVzClg7Iyg2nKdC&oauth_version=1.0&screen_name=AshishKumarPil1
+DEBUG:oauthlib.oauth1.rfc5849:Normalized URI: https://api.twitter.com/1.1/users/show.json
+DEBUG:oauthlib.oauth1.rfc5849:Signing: signature base string: GET&https%3A%2F%2Fapi.twitter.com%2F1.1%2Fusers%2Fshow.json&oauth_consumer_key%3DFD5eYClWwPjaySPSfWK3JuYeU%26oauth_nonce%3D129095723389477890821627930364%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1627930364%26oauth_token%3D1418783442070769664-QLyopesfXnSG1IdPVzClg7Iyg2nKdC%26oauth_version%3D1.0%26screen_name%3DAshishKumarPil1
+DEBUG:oauthlib.oauth1.rfc5849:Signature: ihqP+W2VpxsV0Yzj5/2leSEPcJM=
+DEBUG:requests_oauthlib.oauth1_auth:Updated url: https://api.twitter.com/1.1/users/show.json?screen_name=AshishKumarPil1
+DEBUG:requests_oauthlib.oauth1_auth:Updated headers: {'Host': 'api.twitter.com', 'Authorization': 'OAuth oauth_nonce="129095723389477890821627930364", oauth_timestamp="1627930364", oauth_version="1.0", oauth_signature_method="HMAC-SHA1", oauth_consumer_key="FD5eYClWwPjaySPSfWK3JuYeU", oauth_token="1418783442070769664-QLyopesfXnSG1IdPVzClg7Iyg2nKdC", oauth_signature="ihqP%2BW2VpxsV0Yzj5%2F2leSEPcJM%3D"'}
+DEBUG:requests_oauthlib.oauth1_auth:Updated body: None
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.twitter.com:443
+DEBUG:urllib3.connectionpool:https://api.twitter.com:443 "GET /1.1/users/show.json?screen_name=AshishKumarPil1 HTTP/1.1" 200 2003
+DEBUG:tweepy.binder:PARAMS: {}
+DEBUG:requests_oauthlib.oauth1_auth:Signing request <PreparedRequest [GET]> using client <Client client_key=FD5eYClWwPjaySPSfWK3JuYeU, client_secret=****, resource_owner_key=1418783442070769664-QLyopesfXnSG1IdPVzClg7Iyg2nKdC, resource_owner_secret=****, signature_method=HMAC-SHA1, signature_type=AUTH_HEADER, callback_uri=None, rsa_key=None, verifier=None, realm=None, encoding=utf-8, decoding=None, nonce=None, timestamp=None>
+DEBUG:requests_oauthlib.oauth1_auth:Including body in call to sign: False
+DEBUG:oauthlib.oauth1.rfc5849:Collected params: [('oauth_nonce', '184075078433696024531627930365'), ('oauth_timestamp', '1627930365'), ('oauth_version', '1.0'), ('oauth_signature_method', 'HMAC-SHA1'), ('oauth_consumer_key', 'FD5eYClWwPjaySPSfWK3JuYeU'), ('oauth_token', '1418783442070769664-QLyopesfXnSG1IdPVzClg7Iyg2nKdC')]
+DEBUG:oauthlib.oauth1.rfc5849:Normalized params: oauth_consumer_key=FD5eYClWwPjaySPSfWK3JuYeU&oauth_nonce=184075078433696024531627930365&oauth_signature_method=HMAC-SHA1&oauth_timestamp=1627930365&oauth_token=1418783442070769664-QLyopesfXnSG1IdPVzClg7Iyg2nKdC&oauth_version=1.0
+DEBUG:oauthlib.oauth1.rfc5849:Normalized URI: https://api.twitter.com/1.1/statuses/user_timeline.json
+DEBUG:oauthlib.oauth1.rfc5849:Signing: signature base string: GET&https%3A%2F%2Fapi.twitter.com%2F1.1%2Fstatuses%2Fuser_timeline.json&oauth_consumer_key%3DFD5eYClWwPjaySPSfWK3JuYeU%26oauth_nonce%3D184075078433696024531627930365%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1627930365%26oauth_token%3D1418783442070769664-QLyopesfXnSG1IdPVzClg7Iyg2nKdC%26oauth_version%3D1.0
+DEBUG:oauthlib.oauth1.rfc5849:Signature: EzX+crKRtfqi3A3sSxU7LLxpFRI=
+DEBUG:requests_oauthlib.oauth1_auth:Updated url: https://api.twitter.com/1.1/statuses/user_timeline.json
+DEBUG:requests_oauthlib.oauth1_auth:Updated headers: {'Host': 'api.twitter.com', 'Authorization': 'OAuth oauth_nonce="184075078433696024531627930365", oauth_timestamp="1627930365", oauth_version="1.0", oauth_signature_method="HMAC-SHA1", oauth_consumer_key="FD5eYClWwPjaySPSfWK3JuYeU", oauth_token="1418783442070769664-QLyopesfXnSG1IdPVzClg7Iyg2nKdC", oauth_signature="EzX%2BcrKRtfqi3A3sSxU7LLxpFRI%3D"'}
+DEBUG:requests_oauthlib.oauth1_auth:Updated body: None
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.twitter.com:443
+DEBUG:urllib3.connectionpool:https://api.twitter.com:443 "GET /1.1/statuses/user_timeline.json HTTP/1.1" 200 38541
+DEBUG:tweepy.binder:PARAMS: {'create': b'True'}
+DEBUG:tweepy.binder:PARAMS: {'max_id': b'1419161715644588035'}
+DEBUG:requests_oauthlib.oauth1_auth:Signing request <PreparedRequest [GET]> using client <Client client_key=FD5eYClWwPjaySPSfWK3JuYeU, client_secret=****, resource_owner_key=1418783442070769664-QLyopesfXnSG1IdPVzClg7Iyg2nKdC, resource_owner_secret=****, signature_method=HMAC-SHA1, signature_type=AUTH_HEADER, callback_uri=None, rsa_key=None, verifier=None, realm=None, encoding=utf-8, decoding=None, nonce=None, timestamp=None>
+DEBUG:requests_oauthlib.oauth1_auth:Including body in call to sign: False
+DEBUG:oauthlib.oauth1.rfc5849:Collected params: [('max_id', '1419161715644588035'), ('oauth_nonce', '120939333678680508941627930367'), ('oauth_timestamp', '1627930367'), ('oauth_version', '1.0'), ('oauth_signature_method', 'HMAC-SHA1'), ('oauth_consumer_key', 'FD5eYClWwPjaySPSfWK3JuYeU'), ('oauth_token', '1418783442070769664-QLyopesfXnSG1IdPVzClg7Iyg2nKdC')]
+DEBUG:oauthlib.oauth1.rfc5849:Normalized params: max_id=1419161715644588035&oauth_consumer_key=FD5eYClWwPjaySPSfWK3JuYeU&oauth_nonce=120939333678680508941627930367&oauth_signature_method=HMAC-SHA1&oauth_timestamp=1627930367&oauth_token=1418783442070769664-QLyopesfXnSG1IdPVzClg7Iyg2nKdC&oauth_version=1.0
+DEBUG:oauthlib.oauth1.rfc5849:Normalized URI: https://api.twitter.com/1.1/statuses/user_timeline.json
+DEBUG:oauthlib.oauth1.rfc5849:Signing: signature base string: GET&https%3A%2F%2Fapi.twitter.com%2F1.1%2Fstatuses%2Fuser_timeline.json&max_id%3D1419161715644588035%26oauth_consumer_key%3DFD5eYClWwPjaySPSfWK3JuYeU%26oauth_nonce%3D120939333678680508941627930367%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1627930367%26oauth_token%3D1418783442070769664-QLyopesfXnSG1IdPVzClg7Iyg2nKdC%26oauth_version%3D1.0
+DEBUG:oauthlib.oauth1.rfc5849:Signature: FSURlk6GXIOvz9pVVu5Mzh8I51c=
+DEBUG:requests_oauthlib.oauth1_auth:Updated url: https://api.twitter.com/1.1/statuses/user_timeline.json?max_id=1419161715644588035
+DEBUG:requests_oauthlib.oauth1_auth:Updated headers: {'Host': 'api.twitter.com', 'Cookie': 'guest_id=v1%3A162793036828017962; personalization_id="v1_X0kIkgs6FHyCzGA0+Thn3Q=="; lang=en', 'Authorization': 'OAuth oauth_nonce="120939333678680508941627930367", oauth_timestamp="1627930367", oauth_version="1.0", oauth_signature_method="HMAC-SHA1", oauth_consumer_key="FD5eYClWwPjaySPSfWK3JuYeU", oauth_token="1418783442070769664-QLyopesfXnSG1IdPVzClg7Iyg2nKdC", oauth_signature="FSURlk6GXIOvz9pVVu5Mzh8I51c%3D"'}
+DEBUG:requests_oauthlib.oauth1_auth:Updated body: None
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.twitter.com:443
+DEBUG:urllib3.connectionpool:https://api.twitter.com:443 "GET /1.1/statuses/user_timeline.json?max_id=1419161715644588035 HTTP/1.1" 200 19256
+DEBUG:tweepy.binder:PARAMS: {'create': b'True'}
+DEBUG:tweepy.binder:PARAMS: {'max_id': b'1419160104516022272'}
+DEBUG:requests_oauthlib.oauth1_auth:Signing request <PreparedRequest [GET]> using client <Client client_key=FD5eYClWwPjaySPSfWK3JuYeU, client_secret=****, resource_owner_key=1418783442070769664-QLyopesfXnSG1IdPVzClg7Iyg2nKdC, resource_owner_secret=****, signature_method=HMAC-SHA1, signature_type=AUTH_HEADER, callback_uri=None, rsa_key=None, verifier=None, realm=None, encoding=utf-8, decoding=None, nonce=None, timestamp=None>
+DEBUG:requests_oauthlib.oauth1_auth:Including body in call to sign: False
+DEBUG:oauthlib.oauth1.rfc5849:Collected params: [('max_id', '1419160104516022272'), ('oauth_nonce', '65550445195332815341627930368'), ('oauth_timestamp', '1627930368'), ('oauth_version', '1.0'), ('oauth_signature_method', 'HMAC-SHA1'), ('oauth_consumer_key', 'FD5eYClWwPjaySPSfWK3JuYeU'), ('oauth_token', '1418783442070769664-QLyopesfXnSG1IdPVzClg7Iyg2nKdC')]
+DEBUG:oauthlib.oauth1.rfc5849:Normalized params: max_id=1419160104516022272&oauth_consumer_key=FD5eYClWwPjaySPSfWK3JuYeU&oauth_nonce=65550445195332815341627930368&oauth_signature_method=HMAC-SHA1&oauth_timestamp=1627930368&oauth_token=1418783442070769664-QLyopesfXnSG1IdPVzClg7Iyg2nKdC&oauth_version=1.0
+DEBUG:oauthlib.oauth1.rfc5849:Normalized URI: https://api.twitter.com/1.1/statuses/user_timeline.json
+DEBUG:oauthlib.oauth1.rfc5849:Signing: signature base string: GET&https%3A%2F%2Fapi.twitter.com%2F1.1%2Fstatuses%2Fuser_timeline.json&max_id%3D1419160104516022272%26oauth_consumer_key%3DFD5eYClWwPjaySPSfWK3JuYeU%26oauth_nonce%3D65550445195332815341627930368%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1627930368%26oauth_token%3D1418783442070769664-QLyopesfXnSG1IdPVzClg7Iyg2nKdC%26oauth_version%3D1.0
+DEBUG:oauthlib.oauth1.rfc5849:Signature: 44pbciwUKfx/gddKJ0mKnv/fuuU=
+DEBUG:requests_oauthlib.oauth1_auth:Updated url: https://api.twitter.com/1.1/statuses/user_timeline.json?max_id=1419160104516022272
+DEBUG:requests_oauthlib.oauth1_auth:Updated headers: {'Host': 'api.twitter.com', 'Cookie': 'guest_id=v1%3A162793036828017962; personalization_id="v1_X0kIkgs6FHyCzGA0+Thn3Q=="; lang=en', 'Authorization': 'OAuth oauth_nonce="65550445195332815341627930368", oauth_timestamp="1627930368", oauth_version="1.0", oauth_signature_method="HMAC-SHA1", oauth_consumer_key="FD5eYClWwPjaySPSfWK3JuYeU", oauth_token="1418783442070769664-QLyopesfXnSG1IdPVzClg7Iyg2nKdC", oauth_signature="44pbciwUKfx%2FgddKJ0mKnv%2FfuuU%3D"'}
+DEBUG:requests_oauthlib.oauth1_auth:Updated body: None
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.twitter.com:443
+DEBUG:urllib3.connectionpool:https://api.twitter.com:443 "GET /1.1/statuses/user_timeline.json?max_id=1419160104516022272 HTTP/1.1" 200 2
+DEBUG:tweepy.binder:PARAMS: {'create': b'True'}
+INFO:app:The User:AshishKumarPil1 is Authorized
+INFO:werkzeug:127.0.0.1 - - [03/Aug/2021 00:22:50] "[32mGET /app?oauth_token=XZVlEQAAAAABR-1AAAABewg1_U0&oauth_verifier=ICWI3TAk3cQauo2YqqeDfJEqnxnBGSXP HTTP/1.1[0m" 302 -
+INFO:app:All user timeline tweets fetched
+INFO:werkzeug:127.0.0.1 - - [03/Aug/2021 00:22:50] "GET /data HTTP/1.1" 200 -
+WARNING:root:app start!
+WARNING:root:app start!
+INFO:app:All db tables created
+WARNING:werkzeug: * Running on all addresses.
+   WARNING: This is a development server. Do not use it in a production deployment.
+INFO:werkzeug: * Running on http://192.168.43.185:5000/ (Press CTRL+C to quit)
+INFO:werkzeug:127.0.0.1 - - [03/Aug/2021 00:55:43] "[32mGET / HTTP/1.1[0m" 302 -
+DEBUG:requests_oauthlib.oauth1_session:Fetching token from https://api.twitter.com/oauth/request_token using client <Client client_key=FD5eYClWwPjaySPSfWK3JuYeU, client_secret=****, resource_owner_key=None, resource_owner_secret=None, signature_method=HMAC-SHA1, signature_type=AUTH_HEADER, callback_uri=None, rsa_key=None, verifier=None, realm=None, encoding=utf-8, decoding=utf-8, nonce=None, timestamp=None>
+DEBUG:requests_oauthlib.oauth1_auth:Signing request <PreparedRequest [POST]> using client <Client client_key=FD5eYClWwPjaySPSfWK3JuYeU, client_secret=****, resource_owner_key=None, resource_owner_secret=None, signature_method=HMAC-SHA1, signature_type=AUTH_HEADER, callback_uri=None, rsa_key=None, verifier=None, realm=None, encoding=utf-8, decoding=utf-8, nonce=None, timestamp=None>
+DEBUG:requests_oauthlib.oauth1_auth:Including body in call to sign: False
+DEBUG:oauthlib.oauth1.rfc5849:Collected params: [('oauth_nonce', '42574543689742536301627932343'), ('oauth_timestamp', '1627932343'), ('oauth_version', '1.0'), ('oauth_signature_method', 'HMAC-SHA1'), ('oauth_consumer_key', 'FD5eYClWwPjaySPSfWK3JuYeU')]
+DEBUG:oauthlib.oauth1.rfc5849:Normalized params: oauth_consumer_key=FD5eYClWwPjaySPSfWK3JuYeU&oauth_nonce=42574543689742536301627932343&oauth_signature_method=HMAC-SHA1&oauth_timestamp=1627932343&oauth_version=1.0
+DEBUG:oauthlib.oauth1.rfc5849:Normalized URI: https://api.twitter.com/oauth/request_token
+DEBUG:oauthlib.oauth1.rfc5849:Signing: signature base string: POST&https%3A%2F%2Fapi.twitter.com%2Foauth%2Frequest_token&oauth_consumer_key%3DFD5eYClWwPjaySPSfWK3JuYeU%26oauth_nonce%3D42574543689742536301627932343%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1627932343%26oauth_version%3D1.0
+DEBUG:oauthlib.oauth1.rfc5849:Signature: EzfRA6qIualPdgB+eAUA2/7D4uY=
+DEBUG:oauthlib.oauth1.rfc5849:Encoding URI, headers and body to utf-8.
+DEBUG:requests_oauthlib.oauth1_auth:Updated url: https://api.twitter.com/oauth/request_token
+DEBUG:requests_oauthlib.oauth1_auth:Updated headers: {b'User-Agent': b'python-requests/2.25.1', b'Accept-Encoding': b'gzip, deflate', b'Accept': b'*/*', b'Connection': b'keep-alive', b'Content-Length': b'0', b'Authorization': b'OAuth oauth_nonce="42574543689742536301627932343", oauth_timestamp="1627932343", oauth_version="1.0", oauth_signature_method="HMAC-SHA1", oauth_consumer_key="FD5eYClWwPjaySPSfWK3JuYeU", oauth_signature="EzfRA6qIualPdgB%2BeAUA2%2F7D4uY%3D"'}
+DEBUG:requests_oauthlib.oauth1_auth:Updated body: None
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.twitter.com:443
+DEBUG:urllib3.connectionpool:https://api.twitter.com:443 "POST /oauth/request_token HTTP/1.1" 200 127
+DEBUG:requests_oauthlib.oauth1_session:Decoding token from response "oauth_token=c-6s6AAAAAABR-1AAAABewhUR2A&oauth_token_secret=rM0SB1Qsg5Hp6Jx8lSCijcaIoT9LLUi1&oauth_callback_confirmed=true"
+DEBUG:requests_oauthlib.oauth1_session:Obtained token {'oauth_token': 'c-6s6AAAAAABR-1AAAABewhUR2A', 'oauth_token_secret': 'rM0SB1Qsg5Hp6Jx8lSCijcaIoT9LLUi1', 'oauth_callback_confirmed': 'true'}
+DEBUG:requests_oauthlib.oauth1_session:Updating internal client attributes from token data.
+DEBUG:requests_oauthlib.oauth1_session:Resetting callback_uri and realm (not needed in next phase).
+DEBUG:requests_oauthlib.oauth1_session:Adding parameters {'oauth_token': 'c-6s6AAAAAABR-1AAAABewhUR2A'} to url https://api.twitter.com/oauth/authorize
+INFO:app:https://api.twitter.com/oauth/authorize?oauth_token=c-6s6AAAAAABR-1AAAABewhUR2A
+INFO:werkzeug:127.0.0.1 - - [03/Aug/2021 00:55:44] "[32mGET /twitter_auth HTTP/1.1[0m" 302 -
+INFO:app:oauth_tok=c-6s6AAAAAABR-1AAAABewhUR2A oauth_ver=17jvtI3hU8R6PxbPmgunEoozW1HCgam7
+INFO:app:Tweets loaded in the database
+DEBUG:tweepy.binder:PARAMS: {}
+DEBUG:requests_oauthlib.oauth1_auth:Signing request <PreparedRequest [GET]> using client <Client client_key=FD5eYClWwPjaySPSfWK3JuYeU, client_secret=****, resource_owner_key=1418783442070769664-QLyopesfXnSG1IdPVzClg7Iyg2nKdC, resource_owner_secret=****, signature_method=HMAC-SHA1, signature_type=AUTH_HEADER, callback_uri=None, rsa_key=None, verifier=None, realm=None, encoding=utf-8, decoding=None, nonce=None, timestamp=None>
+DEBUG:requests_oauthlib.oauth1_auth:Including body in call to sign: False
+DEBUG:oauthlib.oauth1.rfc5849:Collected params: [('oauth_nonce', '140567339495453506611627932348'), ('oauth_timestamp', '1627932348'), ('oauth_version', '1.0'), ('oauth_signature_method', 'HMAC-SHA1'), ('oauth_consumer_key', 'FD5eYClWwPjaySPSfWK3JuYeU'), ('oauth_token', '1418783442070769664-QLyopesfXnSG1IdPVzClg7Iyg2nKdC')]
+DEBUG:oauthlib.oauth1.rfc5849:Normalized params: oauth_consumer_key=FD5eYClWwPjaySPSfWK3JuYeU&oauth_nonce=140567339495453506611627932348&oauth_signature_method=HMAC-SHA1&oauth_timestamp=1627932348&oauth_token=1418783442070769664-QLyopesfXnSG1IdPVzClg7Iyg2nKdC&oauth_version=1.0
+DEBUG:oauthlib.oauth1.rfc5849:Normalized URI: https://api.twitter.com/1.1/account/verify_credentials.json
+DEBUG:oauthlib.oauth1.rfc5849:Signing: signature base string: GET&https%3A%2F%2Fapi.twitter.com%2F1.1%2Faccount%2Fverify_credentials.json&oauth_consumer_key%3DFD5eYClWwPjaySPSfWK3JuYeU%26oauth_nonce%3D140567339495453506611627932348%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1627932348%26oauth_token%3D1418783442070769664-QLyopesfXnSG1IdPVzClg7Iyg2nKdC%26oauth_version%3D1.0
+DEBUG:oauthlib.oauth1.rfc5849:Signature: xGnHrm3BPn2375wvH/JPu9E1WQs=
+DEBUG:requests_oauthlib.oauth1_auth:Updated url: https://api.twitter.com/1.1/account/verify_credentials.json
+DEBUG:requests_oauthlib.oauth1_auth:Updated headers: {'Host': 'api.twitter.com', 'Authorization': 'OAuth oauth_nonce="140567339495453506611627932348", oauth_timestamp="1627932348", oauth_version="1.0", oauth_signature_method="HMAC-SHA1", oauth_consumer_key="FD5eYClWwPjaySPSfWK3JuYeU", oauth_token="1418783442070769664-QLyopesfXnSG1IdPVzClg7Iyg2nKdC", oauth_signature="xGnHrm3BPn2375wvH%2FJPu9E1WQs%3D"'}
+DEBUG:requests_oauthlib.oauth1_auth:Updated body: None
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.twitter.com:443
+DEBUG:urllib3.connectionpool:https://api.twitter.com:443 "GET /1.1/account/verify_credentials.json HTTP/1.1" 200 1979
+DEBUG:tweepy.binder:PARAMS: {'screen_name': b'AshishKumarPil1'}
+DEBUG:requests_oauthlib.oauth1_auth:Signing request <PreparedRequest [GET]> using client <Client client_key=FD5eYClWwPjaySPSfWK3JuYeU, client_secret=****, resource_owner_key=1418783442070769664-QLyopesfXnSG1IdPVzClg7Iyg2nKdC, resource_owner_secret=****, signature_method=HMAC-SHA1, signature_type=AUTH_HEADER, callback_uri=None, rsa_key=None, verifier=None, realm=None, encoding=utf-8, decoding=None, nonce=None, timestamp=None>
+DEBUG:requests_oauthlib.oauth1_auth:Including body in call to sign: False
+DEBUG:oauthlib.oauth1.rfc5849:Collected params: [('screen_name', 'AshishKumarPil1'), ('oauth_nonce', '39132853857230141671627932349'), ('oauth_timestamp', '1627932349'), ('oauth_version', '1.0'), ('oauth_signature_method', 'HMAC-SHA1'), ('oauth_consumer_key', 'FD5eYClWwPjaySPSfWK3JuYeU'), ('oauth_token', '1418783442070769664-QLyopesfXnSG1IdPVzClg7Iyg2nKdC')]
+DEBUG:oauthlib.oauth1.rfc5849:Normalized params: oauth_consumer_key=FD5eYClWwPjaySPSfWK3JuYeU&oauth_nonce=39132853857230141671627932349&oauth_signature_method=HMAC-SHA1&oauth_timestamp=1627932349&oauth_token=1418783442070769664-QLyopesfXnSG1IdPVzClg7Iyg2nKdC&oauth_version=1.0&screen_name=AshishKumarPil1
+DEBUG:oauthlib.oauth1.rfc5849:Normalized URI: https://api.twitter.com/1.1/users/show.json
+DEBUG:oauthlib.oauth1.rfc5849:Signing: signature base string: GET&https%3A%2F%2Fapi.twitter.com%2F1.1%2Fusers%2Fshow.json&oauth_consumer_key%3DFD5eYClWwPjaySPSfWK3JuYeU%26oauth_nonce%3D39132853857230141671627932349%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1627932349%26oauth_token%3D1418783442070769664-QLyopesfXnSG1IdPVzClg7Iyg2nKdC%26oauth_version%3D1.0%26screen_name%3DAshishKumarPil1
+DEBUG:oauthlib.oauth1.rfc5849:Signature: myWkvvPiWGnDO0AqnmO/CWveUZ8=
+DEBUG:requests_oauthlib.oauth1_auth:Updated url: https://api.twitter.com/1.1/users/show.json?screen_name=AshishKumarPil1
+DEBUG:requests_oauthlib.oauth1_auth:Updated headers: {'Host': 'api.twitter.com', 'Authorization': 'OAuth oauth_nonce="39132853857230141671627932349", oauth_timestamp="1627932349", oauth_version="1.0", oauth_signature_method="HMAC-SHA1", oauth_consumer_key="FD5eYClWwPjaySPSfWK3JuYeU", oauth_token="1418783442070769664-QLyopesfXnSG1IdPVzClg7Iyg2nKdC", oauth_signature="myWkvvPiWGnDO0AqnmO%2FCWveUZ8%3D"'}
+DEBUG:requests_oauthlib.oauth1_auth:Updated body: None
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.twitter.com:443
+DEBUG:urllib3.connectionpool:https://api.twitter.com:443 "GET /1.1/users/show.json?screen_name=AshishKumarPil1 HTTP/1.1" 200 2003
+DEBUG:tweepy.binder:PARAMS: {}
+DEBUG:requests_oauthlib.oauth1_auth:Signing request <PreparedRequest [GET]> using client <Client client_key=FD5eYClWwPjaySPSfWK3JuYeU, client_secret=****, resource_owner_key=1418783442070769664-QLyopesfXnSG1IdPVzClg7Iyg2nKdC, resource_owner_secret=****, signature_method=HMAC-SHA1, signature_type=AUTH_HEADER, callback_uri=None, rsa_key=None, verifier=None, realm=None, encoding=utf-8, decoding=None, nonce=None, timestamp=None>
+DEBUG:requests_oauthlib.oauth1_auth:Including body in call to sign: False
+DEBUG:oauthlib.oauth1.rfc5849:Collected params: [('oauth_nonce', '128695653668602967971627932350'), ('oauth_timestamp', '1627932350'), ('oauth_version', '1.0'), ('oauth_signature_method', 'HMAC-SHA1'), ('oauth_consumer_key', 'FD5eYClWwPjaySPSfWK3JuYeU'), ('oauth_token', '1418783442070769664-QLyopesfXnSG1IdPVzClg7Iyg2nKdC')]
+DEBUG:oauthlib.oauth1.rfc5849:Normalized params: oauth_consumer_key=FD5eYClWwPjaySPSfWK3JuYeU&oauth_nonce=128695653668602967971627932350&oauth_signature_method=HMAC-SHA1&oauth_timestamp=1627932350&oauth_token=1418783442070769664-QLyopesfXnSG1IdPVzClg7Iyg2nKdC&oauth_version=1.0
+DEBUG:oauthlib.oauth1.rfc5849:Normalized URI: https://api.twitter.com/1.1/statuses/user_timeline.json
+DEBUG:oauthlib.oauth1.rfc5849:Signing: signature base string: GET&https%3A%2F%2Fapi.twitter.com%2F1.1%2Fstatuses%2Fuser_timeline.json&oauth_consumer_key%3DFD5eYClWwPjaySPSfWK3JuYeU%26oauth_nonce%3D128695653668602967971627932350%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1627932350%26oauth_token%3D1418783442070769664-QLyopesfXnSG1IdPVzClg7Iyg2nKdC%26oauth_version%3D1.0
+DEBUG:oauthlib.oauth1.rfc5849:Signature: x8g2rkJd/4lzIVF7w91Ql9GhFow=
+DEBUG:requests_oauthlib.oauth1_auth:Updated url: https://api.twitter.com/1.1/statuses/user_timeline.json
+DEBUG:requests_oauthlib.oauth1_auth:Updated headers: {'Host': 'api.twitter.com', 'Authorization': 'OAuth oauth_nonce="128695653668602967971627932350", oauth_timestamp="1627932350", oauth_version="1.0", oauth_signature_method="HMAC-SHA1", oauth_consumer_key="FD5eYClWwPjaySPSfWK3JuYeU", oauth_token="1418783442070769664-QLyopesfXnSG1IdPVzClg7Iyg2nKdC", oauth_signature="x8g2rkJd%2F4lzIVF7w91Ql9GhFow%3D"'}
+DEBUG:requests_oauthlib.oauth1_auth:Updated body: None
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.twitter.com:443
+DEBUG:urllib3.connectionpool:https://api.twitter.com:443 "GET /1.1/statuses/user_timeline.json HTTP/1.1" 200 38541
+DEBUG:tweepy.binder:PARAMS: {'create': b'True'}
+DEBUG:tweepy.binder:PARAMS: {'max_id': b'1419161715644588035'}
+DEBUG:requests_oauthlib.oauth1_auth:Signing request <PreparedRequest [GET]> using client <Client client_key=FD5eYClWwPjaySPSfWK3JuYeU, client_secret=****, resource_owner_key=1418783442070769664-QLyopesfXnSG1IdPVzClg7Iyg2nKdC, resource_owner_secret=****, signature_method=HMAC-SHA1, signature_type=AUTH_HEADER, callback_uri=None, rsa_key=None, verifier=None, realm=None, encoding=utf-8, decoding=None, nonce=None, timestamp=None>
+DEBUG:requests_oauthlib.oauth1_auth:Including body in call to sign: False
+DEBUG:oauthlib.oauth1.rfc5849:Collected params: [('max_id', '1419161715644588035'), ('oauth_nonce', '27298626136650424941627932351'), ('oauth_timestamp', '1627932351'), ('oauth_version', '1.0'), ('oauth_signature_method', 'HMAC-SHA1'), ('oauth_consumer_key', 'FD5eYClWwPjaySPSfWK3JuYeU'), ('oauth_token', '1418783442070769664-QLyopesfXnSG1IdPVzClg7Iyg2nKdC')]
+DEBUG:oauthlib.oauth1.rfc5849:Normalized params: max_id=1419161715644588035&oauth_consumer_key=FD5eYClWwPjaySPSfWK3JuYeU&oauth_nonce=27298626136650424941627932351&oauth_signature_method=HMAC-SHA1&oauth_timestamp=1627932351&oauth_token=1418783442070769664-QLyopesfXnSG1IdPVzClg7Iyg2nKdC&oauth_version=1.0
+DEBUG:oauthlib.oauth1.rfc5849:Normalized URI: https://api.twitter.com/1.1/statuses/user_timeline.json
+DEBUG:oauthlib.oauth1.rfc5849:Signing: signature base string: GET&https%3A%2F%2Fapi.twitter.com%2F1.1%2Fstatuses%2Fuser_timeline.json&max_id%3D1419161715644588035%26oauth_consumer_key%3DFD5eYClWwPjaySPSfWK3JuYeU%26oauth_nonce%3D27298626136650424941627932351%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1627932351%26oauth_token%3D1418783442070769664-QLyopesfXnSG1IdPVzClg7Iyg2nKdC%26oauth_version%3D1.0
+DEBUG:oauthlib.oauth1.rfc5849:Signature: g/3SBHbk09F+N+9hF0EpA+UNm/E=
+DEBUG:requests_oauthlib.oauth1_auth:Updated url: https://api.twitter.com/1.1/statuses/user_timeline.json?max_id=1419161715644588035
+DEBUG:requests_oauthlib.oauth1_auth:Updated headers: {'Host': 'api.twitter.com', 'Cookie': 'guest_id=v1%3A162793235299269542; personalization_id="v1_QxH8njLqasC6gAWZW54VQA=="; lang=en', 'Authorization': 'OAuth oauth_nonce="27298626136650424941627932351", oauth_timestamp="1627932351", oauth_version="1.0", oauth_signature_method="HMAC-SHA1", oauth_consumer_key="FD5eYClWwPjaySPSfWK3JuYeU", oauth_token="1418783442070769664-QLyopesfXnSG1IdPVzClg7Iyg2nKdC", oauth_signature="g%2F3SBHbk09F%2BN%2B9hF0EpA%2BUNm%2FE%3D"'}
+DEBUG:requests_oauthlib.oauth1_auth:Updated body: None
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.twitter.com:443
+DEBUG:urllib3.connectionpool:https://api.twitter.com:443 "GET /1.1/statuses/user_timeline.json?max_id=1419161715644588035 HTTP/1.1" 200 19256
+DEBUG:tweepy.binder:PARAMS: {'create': b'True'}
+DEBUG:tweepy.binder:PARAMS: {'max_id': b'1419160104516022272'}
+DEBUG:requests_oauthlib.oauth1_auth:Signing request <PreparedRequest [GET]> using client <Client client_key=FD5eYClWwPjaySPSfWK3JuYeU, client_secret=****, resource_owner_key=1418783442070769664-QLyopesfXnSG1IdPVzClg7Iyg2nKdC, resource_owner_secret=****, signature_method=HMAC-SHA1, signature_type=AUTH_HEADER, callback_uri=None, rsa_key=None, verifier=None, realm=None, encoding=utf-8, decoding=None, nonce=None, timestamp=None>
+DEBUG:requests_oauthlib.oauth1_auth:Including body in call to sign: False
+DEBUG:oauthlib.oauth1.rfc5849:Collected params: [('max_id', '1419160104516022272'), ('oauth_nonce', '104400808604071482901627932353'), ('oauth_timestamp', '1627932353'), ('oauth_version', '1.0'), ('oauth_signature_method', 'HMAC-SHA1'), ('oauth_consumer_key', 'FD5eYClWwPjaySPSfWK3JuYeU'), ('oauth_token', '1418783442070769664-QLyopesfXnSG1IdPVzClg7Iyg2nKdC')]
+DEBUG:oauthlib.oauth1.rfc5849:Normalized params: max_id=1419160104516022272&oauth_consumer_key=FD5eYClWwPjaySPSfWK3JuYeU&oauth_nonce=104400808604071482901627932353&oauth_signature_method=HMAC-SHA1&oauth_timestamp=1627932353&oauth_token=1418783442070769664-QLyopesfXnSG1IdPVzClg7Iyg2nKdC&oauth_version=1.0
+DEBUG:oauthlib.oauth1.rfc5849:Normalized URI: https://api.twitter.com/1.1/statuses/user_timeline.json
+DEBUG:oauthlib.oauth1.rfc5849:Signing: signature base string: GET&https%3A%2F%2Fapi.twitter.com%2F1.1%2Fstatuses%2Fuser_timeline.json&max_id%3D1419160104516022272%26oauth_consumer_key%3DFD5eYClWwPjaySPSfWK3JuYeU%26oauth_nonce%3D104400808604071482901627932353%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1627932353%26oauth_token%3D1418783442070769664-QLyopesfXnSG1IdPVzClg7Iyg2nKdC%26oauth_version%3D1.0
+DEBUG:oauthlib.oauth1.rfc5849:Signature: TqrU4fkMl09QTxlQOjTxhp3wbdI=
+DEBUG:requests_oauthlib.oauth1_auth:Updated url: https://api.twitter.com/1.1/statuses/user_timeline.json?max_id=1419160104516022272
+DEBUG:requests_oauthlib.oauth1_auth:Updated headers: {'Host': 'api.twitter.com', 'Cookie': 'guest_id=v1%3A162793235299269542; personalization_id="v1_QxH8njLqasC6gAWZW54VQA=="; lang=en', 'Authorization': 'OAuth oauth_nonce="104400808604071482901627932353", oauth_timestamp="1627932353", oauth_version="1.0", oauth_signature_method="HMAC-SHA1", oauth_consumer_key="FD5eYClWwPjaySPSfWK3JuYeU", oauth_token="1418783442070769664-QLyopesfXnSG1IdPVzClg7Iyg2nKdC", oauth_signature="TqrU4fkMl09QTxlQOjTxhp3wbdI%3D"'}
+DEBUG:requests_oauthlib.oauth1_auth:Updated body: None
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.twitter.com:443
+DEBUG:urllib3.connectionpool:https://api.twitter.com:443 "GET /1.1/statuses/user_timeline.json?max_id=1419160104516022272 HTTP/1.1" 200 2
+DEBUG:tweepy.binder:PARAMS: {'create': b'True'}
+INFO:app:The User:AshishKumarPil1 is Authorized
+INFO:werkzeug:127.0.0.1 - - [03/Aug/2021 00:55:54] "[32mGET /app?oauth_token=c-6s6AAAAAABR-1AAAABewhUR2A&oauth_verifier=17jvtI3hU8R6PxbPmgunEoozW1HCgam7 HTTP/1.1[0m" 302 -
+INFO:app:All user timeline tweets fetched
+INFO:werkzeug:127.0.0.1 - - [03/Aug/2021 00:55:54] "GET /data HTTP/1.1" 200 -
+WARNING:root:app start!
+INFO:app:All db tables created
+WARNING:werkzeug: * Running on all addresses.
+   WARNING: This is a development server. Do not use it in a production deployment.
+INFO:werkzeug: * Running on http://192.168.18.54:5000/ (Press CTRL+C to quit)
+INFO:werkzeug:127.0.0.1 - - [03/Aug/2021 02:07:55] "[32mGET / HTTP/1.1[0m" 302 -
+DEBUG:requests_oauthlib.oauth1_session:Fetching token from https://api.twitter.com/oauth/request_token using client <Client client_key=FD5eYClWwPjaySPSfWK3JuYeU, client_secret=****, resource_owner_key=None, resource_owner_secret=None, signature_method=HMAC-SHA1, signature_type=AUTH_HEADER, callback_uri=None, rsa_key=None, verifier=None, realm=None, encoding=utf-8, decoding=utf-8, nonce=None, timestamp=None>
+DEBUG:requests_oauthlib.oauth1_auth:Signing request <PreparedRequest [POST]> using client <Client client_key=FD5eYClWwPjaySPSfWK3JuYeU, client_secret=****, resource_owner_key=None, resource_owner_secret=None, signature_method=HMAC-SHA1, signature_type=AUTH_HEADER, callback_uri=None, rsa_key=None, verifier=None, realm=None, encoding=utf-8, decoding=utf-8, nonce=None, timestamp=None>
+DEBUG:requests_oauthlib.oauth1_auth:Including body in call to sign: False
+DEBUG:oauthlib.oauth1.rfc5849:Collected params: [('oauth_nonce', '117968924633022042071627936675'), ('oauth_timestamp', '1627936675'), ('oauth_version', '1.0'), ('oauth_signature_method', 'HMAC-SHA1'), ('oauth_consumer_key', 'FD5eYClWwPjaySPSfWK3JuYeU')]
+DEBUG:oauthlib.oauth1.rfc5849:Normalized params: oauth_consumer_key=FD5eYClWwPjaySPSfWK3JuYeU&oauth_nonce=117968924633022042071627936675&oauth_signature_method=HMAC-SHA1&oauth_timestamp=1627936675&oauth_version=1.0
+DEBUG:oauthlib.oauth1.rfc5849:Normalized URI: https://api.twitter.com/oauth/request_token
+DEBUG:oauthlib.oauth1.rfc5849:Signing: signature base string: POST&https%3A%2F%2Fapi.twitter.com%2Foauth%2Frequest_token&oauth_consumer_key%3DFD5eYClWwPjaySPSfWK3JuYeU%26oauth_nonce%3D117968924633022042071627936675%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1627936675%26oauth_version%3D1.0
+DEBUG:oauthlib.oauth1.rfc5849:Signature: U0yQlGUbP+GJ4dh/0Bc6HAkbM8o=
+DEBUG:oauthlib.oauth1.rfc5849:Encoding URI, headers and body to utf-8.
+DEBUG:requests_oauthlib.oauth1_auth:Updated url: https://api.twitter.com/oauth/request_token
+DEBUG:requests_oauthlib.oauth1_auth:Updated headers: {b'User-Agent': b'python-requests/2.25.1', b'Accept-Encoding': b'gzip, deflate', b'Accept': b'*/*', b'Connection': b'keep-alive', b'Content-Length': b'0', b'Authorization': b'OAuth oauth_nonce="117968924633022042071627936675", oauth_timestamp="1627936675", oauth_version="1.0", oauth_signature_method="HMAC-SHA1", oauth_consumer_key="FD5eYClWwPjaySPSfWK3JuYeU", oauth_signature="U0yQlGUbP%2BGJ4dh%2F0Bc6HAkbM8o%3D"'}
+DEBUG:requests_oauthlib.oauth1_auth:Updated body: None
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.twitter.com:443
+DEBUG:urllib3.connectionpool:https://api.twitter.com:443 "POST /oauth/request_token HTTP/1.1" 200 128
+DEBUG:requests_oauthlib.oauth1_session:Decoding token from response "oauth_token=MKa_JQAAAAABR-1AAAABewiWX44&oauth_token_secret=cqs9hNB7BeorqiQ1qNuUrfJq8Kzc4NQ2&oauth_callback_confirmed=true"
+DEBUG:requests_oauthlib.oauth1_session:Obtained token {'oauth_token': 'MKa_JQAAAAABR-1AAAABewiWX44', 'oauth_token_secret': 'cqs9hNB7BeorqiQ1qNuUrfJq8Kzc4NQ2', 'oauth_callback_confirmed': 'true'}
+DEBUG:requests_oauthlib.oauth1_session:Updating internal client attributes from token data.
+DEBUG:requests_oauthlib.oauth1_session:Resetting callback_uri and realm (not needed in next phase).
+DEBUG:requests_oauthlib.oauth1_session:Adding parameters {'oauth_token': 'MKa_JQAAAAABR-1AAAABewiWX44'} to url https://api.twitter.com/oauth/authorize
+INFO:app:https://api.twitter.com/oauth/authorize?oauth_token=MKa_JQAAAAABR-1AAAABewiWX44
+INFO:werkzeug:127.0.0.1 - - [03/Aug/2021 02:07:55] "[32mGET /twitter_auth HTTP/1.1[0m" 302 -
+WARNING:root:app start!
+WARNING:root:app start!
+INFO:app:All db tables created
+INFO:werkzeug: * Restarting with stat
+WARNING:root:app start!
+INFO:app:All db tables created
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 207-219-337
+WARNING:werkzeug: * Running on all addresses.
+   WARNING: This is a development server. Do not use it in a production deployment.
+INFO:werkzeug: * Running on http://192.168.18.54:4455/ (Press CTRL+C to quit)
+INFO:werkzeug:127.0.0.1 - - [03/Aug/2021 04:14:31] "[32mGET / HTTP/1.1[0m" 302 -
+DEBUG:requests_oauthlib.oauth1_session:Fetching token from https://api.twitter.com/oauth/request_token using client <Client client_key=FD5eYClWwPjaySPSfWK3JuYeU, client_secret=****, resource_owner_key=None, resource_owner_secret=None, signature_method=HMAC-SHA1, signature_type=AUTH_HEADER, callback_uri=None, rsa_key=None, verifier=None, realm=None, encoding=utf-8, decoding=utf-8, nonce=None, timestamp=None>
+DEBUG:requests_oauthlib.oauth1_auth:Signing request <PreparedRequest [POST]> using client <Client client_key=FD5eYClWwPjaySPSfWK3JuYeU, client_secret=****, resource_owner_key=None, resource_owner_secret=None, signature_method=HMAC-SHA1, signature_type=AUTH_HEADER, callback_uri=None, rsa_key=None, verifier=None, realm=None, encoding=utf-8, decoding=utf-8, nonce=None, timestamp=None>
+DEBUG:requests_oauthlib.oauth1_auth:Including body in call to sign: False
+DEBUG:oauthlib.oauth1.rfc5849:Collected params: [('oauth_nonce', '20788582144893264671627944272'), ('oauth_timestamp', '1627944272'), ('oauth_version', '1.0'), ('oauth_signature_method', 'HMAC-SHA1'), ('oauth_consumer_key', 'FD5eYClWwPjaySPSfWK3JuYeU')]
+DEBUG:oauthlib.oauth1.rfc5849:Normalized params: oauth_consumer_key=FD5eYClWwPjaySPSfWK3JuYeU&oauth_nonce=20788582144893264671627944272&oauth_signature_method=HMAC-SHA1&oauth_timestamp=1627944272&oauth_version=1.0
+DEBUG:oauthlib.oauth1.rfc5849:Normalized URI: https://api.twitter.com/oauth/request_token
+DEBUG:oauthlib.oauth1.rfc5849:Signing: signature base string: POST&https%3A%2F%2Fapi.twitter.com%2Foauth%2Frequest_token&oauth_consumer_key%3DFD5eYClWwPjaySPSfWK3JuYeU%26oauth_nonce%3D20788582144893264671627944272%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1627944272%26oauth_version%3D1.0
+DEBUG:oauthlib.oauth1.rfc5849:Signature: 5Ri+fg1fXo99NycNJnf8IIclBH0=
+DEBUG:oauthlib.oauth1.rfc5849:Encoding URI, headers and body to utf-8.
+DEBUG:requests_oauthlib.oauth1_auth:Updated url: https://api.twitter.com/oauth/request_token
+DEBUG:requests_oauthlib.oauth1_auth:Updated headers: {b'User-Agent': b'python-requests/2.25.1', b'Accept-Encoding': b'gzip, deflate', b'Accept': b'*/*', b'Connection': b'keep-alive', b'Content-Length': b'0', b'Authorization': b'OAuth oauth_nonce="20788582144893264671627944272", oauth_timestamp="1627944272", oauth_version="1.0", oauth_signature_method="HMAC-SHA1", oauth_consumer_key="FD5eYClWwPjaySPSfWK3JuYeU", oauth_signature="5Ri%2Bfg1fXo99NycNJnf8IIclBH0%3D"'}
+DEBUG:requests_oauthlib.oauth1_auth:Updated body: None
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.twitter.com:443
+DEBUG:urllib3.connectionpool:https://api.twitter.com:443 "POST /oauth/request_token HTTP/1.1" 200 128
+DEBUG:requests_oauthlib.oauth1_session:Decoding token from response "oauth_token=g5S4gwAAAAABR-1AAAABewkKTXs&oauth_token_secret=obtqN6oFOCj3wa0ykFI5IZNSqg5UvcDj&oauth_callback_confirmed=true"
+DEBUG:requests_oauthlib.oauth1_session:Obtained token {'oauth_token': 'g5S4gwAAAAABR-1AAAABewkKTXs', 'oauth_token_secret': 'obtqN6oFOCj3wa0ykFI5IZNSqg5UvcDj', 'oauth_callback_confirmed': 'true'}
+DEBUG:requests_oauthlib.oauth1_session:Updating internal client attributes from token data.
+DEBUG:requests_oauthlib.oauth1_session:Resetting callback_uri and realm (not needed in next phase).
+DEBUG:requests_oauthlib.oauth1_session:Adding parameters {'oauth_token': 'g5S4gwAAAAABR-1AAAABewkKTXs'} to url https://api.twitter.com/oauth/authorize
+INFO:app:https://api.twitter.com/oauth/authorize?oauth_token=g5S4gwAAAAABR-1AAAABewkKTXs
+INFO:werkzeug:127.0.0.1 - - [03/Aug/2021 04:14:32] "[32mGET /twitter_auth HTTP/1.1[0m" 302 -
+WARNING:root:app start!
+INFO:app:All db tables created
+INFO:werkzeug: * Restarting with stat
+WARNING:root:app start!
+INFO:app:All db tables created
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 207-219-337
+WARNING:werkzeug: * Running on all addresses.
+   WARNING: This is a development server. Do not use it in a production deployment.
+INFO:werkzeug: * Running on http://192.168.18.54:4455/ (Press CTRL+C to quit)
+INFO:werkzeug:127.0.0.1 - - [03/Aug/2021 12:51:57] "[32mGET / HTTP/1.1[0m" 302 -
+DEBUG:requests_oauthlib.oauth1_session:Fetching token from https://api.twitter.com/oauth/request_token using client <Client client_key=FD5eYClWwPjaySPSfWK3JuYeU, client_secret=****, resource_owner_key=None, resource_owner_secret=None, signature_method=HMAC-SHA1, signature_type=AUTH_HEADER, callback_uri=None, rsa_key=None, verifier=None, realm=None, encoding=utf-8, decoding=utf-8, nonce=None, timestamp=None>
+DEBUG:requests_oauthlib.oauth1_auth:Signing request <PreparedRequest [POST]> using client <Client client_key=FD5eYClWwPjaySPSfWK3JuYeU, client_secret=****, resource_owner_key=None, resource_owner_secret=None, signature_method=HMAC-SHA1, signature_type=AUTH_HEADER, callback_uri=None, rsa_key=None, verifier=None, realm=None, encoding=utf-8, decoding=utf-8, nonce=None, timestamp=None>
+DEBUG:requests_oauthlib.oauth1_auth:Including body in call to sign: False
+DEBUG:oauthlib.oauth1.rfc5849:Collected params: [('oauth_nonce', '18592864341097951231627975317'), ('oauth_timestamp', '1627975317'), ('oauth_version', '1.0'), ('oauth_signature_method', 'HMAC-SHA1'), ('oauth_consumer_key', 'FD5eYClWwPjaySPSfWK3JuYeU')]
+DEBUG:oauthlib.oauth1.rfc5849:Normalized params: oauth_consumer_key=FD5eYClWwPjaySPSfWK3JuYeU&oauth_nonce=18592864341097951231627975317&oauth_signature_method=HMAC-SHA1&oauth_timestamp=1627975317&oauth_version=1.0
+DEBUG:oauthlib.oauth1.rfc5849:Normalized URI: https://api.twitter.com/oauth/request_token
+DEBUG:oauthlib.oauth1.rfc5849:Signing: signature base string: POST&https%3A%2F%2Fapi.twitter.com%2Foauth%2Frequest_token&oauth_consumer_key%3DFD5eYClWwPjaySPSfWK3JuYeU%26oauth_nonce%3D18592864341097951231627975317%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1627975317%26oauth_version%3D1.0
+DEBUG:oauthlib.oauth1.rfc5849:Signature: byEjwrJaCj9/wBuJOcvXgSPTrA4=
+DEBUG:oauthlib.oauth1.rfc5849:Encoding URI, headers and body to utf-8.
+DEBUG:requests_oauthlib.oauth1_auth:Updated url: https://api.twitter.com/oauth/request_token
+DEBUG:requests_oauthlib.oauth1_auth:Updated headers: {b'User-Agent': b'python-requests/2.25.1', b'Accept-Encoding': b'gzip, deflate', b'Accept': b'*/*', b'Connection': b'keep-alive', b'Content-Length': b'0', b'Authorization': b'OAuth oauth_nonce="18592864341097951231627975317", oauth_timestamp="1627975317", oauth_version="1.0", oauth_signature_method="HMAC-SHA1", oauth_consumer_key="FD5eYClWwPjaySPSfWK3JuYeU", oauth_signature="byEjwrJaCj9%2FwBuJOcvXgSPTrA4%3D"'}
+DEBUG:requests_oauthlib.oauth1_auth:Updated body: None
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.twitter.com:443
+DEBUG:urllib3.connectionpool:https://api.twitter.com:443 "POST /oauth/request_token HTTP/1.1" 200 127
+DEBUG:requests_oauthlib.oauth1_session:Decoding token from response "oauth_token=XdfRzAAAAAABR-1AAAABewrj98k&oauth_token_secret=P4wNSVrzxhEWcGNfLH7nL8b2LhvykREv&oauth_callback_confirmed=true"
+DEBUG:requests_oauthlib.oauth1_session:Obtained token {'oauth_token': 'XdfRzAAAAAABR-1AAAABewrj98k', 'oauth_token_secret': 'P4wNSVrzxhEWcGNfLH7nL8b2LhvykREv', 'oauth_callback_confirmed': 'true'}
+DEBUG:requests_oauthlib.oauth1_session:Updating internal client attributes from token data.
+DEBUG:requests_oauthlib.oauth1_session:Resetting callback_uri and realm (not needed in next phase).
+DEBUG:requests_oauthlib.oauth1_session:Adding parameters {'oauth_token': 'XdfRzAAAAAABR-1AAAABewrj98k'} to url https://api.twitter.com/oauth/authorize
+INFO:app:https://api.twitter.com/oauth/authorize?oauth_token=XdfRzAAAAAABR-1AAAABewrj98k
+INFO:werkzeug:127.0.0.1 - - [03/Aug/2021 12:51:58] "[32mGET /twitter_auth HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [03/Aug/2021 12:54:19] "[32mGET / HTTP/1.1[0m" 302 -
+DEBUG:requests_oauthlib.oauth1_session:Fetching token from https://api.twitter.com/oauth/request_token using client <Client client_key=FD5eYClWwPjaySPSfWK3JuYeU, client_secret=****, resource_owner_key=None, resource_owner_secret=None, signature_method=HMAC-SHA1, signature_type=AUTH_HEADER, callback_uri=None, rsa_key=None, verifier=None, realm=None, encoding=utf-8, decoding=utf-8, nonce=None, timestamp=None>
+DEBUG:requests_oauthlib.oauth1_auth:Signing request <PreparedRequest [POST]> using client <Client client_key=FD5eYClWwPjaySPSfWK3JuYeU, client_secret=****, resource_owner_key=None, resource_owner_secret=None, signature_method=HMAC-SHA1, signature_type=AUTH_HEADER, callback_uri=None, rsa_key=None, verifier=None, realm=None, encoding=utf-8, decoding=utf-8, nonce=None, timestamp=None>
+DEBUG:requests_oauthlib.oauth1_auth:Including body in call to sign: False
+DEBUG:oauthlib.oauth1.rfc5849:Collected params: [('oauth_nonce', '183468432061899200131627975459'), ('oauth_timestamp', '1627975459'), ('oauth_version', '1.0'), ('oauth_signature_method', 'HMAC-SHA1'), ('oauth_consumer_key', 'FD5eYClWwPjaySPSfWK3JuYeU')]
+DEBUG:oauthlib.oauth1.rfc5849:Normalized params: oauth_consumer_key=FD5eYClWwPjaySPSfWK3JuYeU&oauth_nonce=183468432061899200131627975459&oauth_signature_method=HMAC-SHA1&oauth_timestamp=1627975459&oauth_version=1.0
+DEBUG:oauthlib.oauth1.rfc5849:Normalized URI: https://api.twitter.com/oauth/request_token
+DEBUG:oauthlib.oauth1.rfc5849:Signing: signature base string: POST&https%3A%2F%2Fapi.twitter.com%2Foauth%2Frequest_token&oauth_consumer_key%3DFD5eYClWwPjaySPSfWK3JuYeU%26oauth_nonce%3D183468432061899200131627975459%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1627975459%26oauth_version%3D1.0
+DEBUG:oauthlib.oauth1.rfc5849:Signature: Gqe5Ws/nBcZnDzXrshgHc8xpZFw=
+DEBUG:oauthlib.oauth1.rfc5849:Encoding URI, headers and body to utf-8.
+DEBUG:requests_oauthlib.oauth1_auth:Updated url: https://api.twitter.com/oauth/request_token
+DEBUG:requests_oauthlib.oauth1_auth:Updated headers: {b'User-Agent': b'python-requests/2.25.1', b'Accept-Encoding': b'gzip, deflate', b'Accept': b'*/*', b'Connection': b'keep-alive', b'Content-Length': b'0', b'Authorization': b'OAuth oauth_nonce="183468432061899200131627975459", oauth_timestamp="1627975459", oauth_version="1.0", oauth_signature_method="HMAC-SHA1", oauth_consumer_key="FD5eYClWwPjaySPSfWK3JuYeU", oauth_signature="Gqe5Ws%2FnBcZnDzXrshgHc8xpZFw%3D"'}
+DEBUG:requests_oauthlib.oauth1_auth:Updated body: None
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.twitter.com:443
+DEBUG:urllib3.connectionpool:https://api.twitter.com:443 "POST /oauth/request_token HTTP/1.1" 200 128
+DEBUG:requests_oauthlib.oauth1_session:Decoding token from response "oauth_token=eKU5TQAAAAABR-1AAAABewrmJWs&oauth_token_secret=oQW6rqP3GEzG8zBF1ak2gA1pQeQCKhs1&oauth_callback_confirmed=true"
+DEBUG:requests_oauthlib.oauth1_session:Obtained token {'oauth_token': 'eKU5TQAAAAABR-1AAAABewrmJWs', 'oauth_token_secret': 'oQW6rqP3GEzG8zBF1ak2gA1pQeQCKhs1', 'oauth_callback_confirmed': 'true'}
+DEBUG:requests_oauthlib.oauth1_session:Updating internal client attributes from token data.
+DEBUG:requests_oauthlib.oauth1_session:Resetting callback_uri and realm (not needed in next phase).
+DEBUG:requests_oauthlib.oauth1_session:Adding parameters {'oauth_token': 'eKU5TQAAAAABR-1AAAABewrmJWs'} to url https://api.twitter.com/oauth/authorize
+INFO:app:https://api.twitter.com/oauth/authorize?oauth_token=eKU5TQAAAAABR-1AAAABewrmJWs
+INFO:werkzeug:127.0.0.1 - - [03/Aug/2021 12:54:20] "[32mGET /twitter_auth HTTP/1.1[0m" 302 -
+WARNING:root:app start!
+INFO:app:All db tables created
+INFO:werkzeug: * Restarting with stat
+WARNING:root:app start!
+INFO:app:All db tables created
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 207-219-337
+WARNING:werkzeug: * Running on all addresses.
+   WARNING: This is a development server. Do not use it in a production deployment.
+INFO:werkzeug: * Running on http://192.168.18.54:4455/ (Press CTRL+C to quit)
+INFO:werkzeug:127.0.0.1 - - [03/Aug/2021 12:55:29] "[32mGET / HTTP/1.1[0m" 302 -
+DEBUG:requests_oauthlib.oauth1_session:Fetching token from https://api.twitter.com/oauth/request_token using client <Client client_key=FD5eYClWwPjaySPSfWK3JuYeU, client_secret=****, resource_owner_key=None, resource_owner_secret=None, signature_method=HMAC-SHA1, signature_type=AUTH_HEADER, callback_uri=None, rsa_key=None, verifier=None, realm=None, encoding=utf-8, decoding=utf-8, nonce=None, timestamp=None>
+DEBUG:requests_oauthlib.oauth1_auth:Signing request <PreparedRequest [POST]> using client <Client client_key=FD5eYClWwPjaySPSfWK3JuYeU, client_secret=****, resource_owner_key=None, resource_owner_secret=None, signature_method=HMAC-SHA1, signature_type=AUTH_HEADER, callback_uri=None, rsa_key=None, verifier=None, realm=None, encoding=utf-8, decoding=utf-8, nonce=None, timestamp=None>
+DEBUG:requests_oauthlib.oauth1_auth:Including body in call to sign: False
+DEBUG:oauthlib.oauth1.rfc5849:Collected params: [('oauth_nonce', '97210409660482566621627975529'), ('oauth_timestamp', '1627975529'), ('oauth_version', '1.0'), ('oauth_signature_method', 'HMAC-SHA1'), ('oauth_consumer_key', 'FD5eYClWwPjaySPSfWK3JuYeU')]
+DEBUG:oauthlib.oauth1.rfc5849:Normalized params: oauth_consumer_key=FD5eYClWwPjaySPSfWK3JuYeU&oauth_nonce=97210409660482566621627975529&oauth_signature_method=HMAC-SHA1&oauth_timestamp=1627975529&oauth_version=1.0
+DEBUG:oauthlib.oauth1.rfc5849:Normalized URI: https://api.twitter.com/oauth/request_token
+DEBUG:oauthlib.oauth1.rfc5849:Signing: signature base string: POST&https%3A%2F%2Fapi.twitter.com%2Foauth%2Frequest_token&oauth_consumer_key%3DFD5eYClWwPjaySPSfWK3JuYeU%26oauth_nonce%3D97210409660482566621627975529%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1627975529%26oauth_version%3D1.0
+DEBUG:oauthlib.oauth1.rfc5849:Signature: VqyK+Kf1EA6akTJJnpXFaHEF6AY=
+DEBUG:oauthlib.oauth1.rfc5849:Encoding URI, headers and body to utf-8.
+DEBUG:requests_oauthlib.oauth1_auth:Updated url: https://api.twitter.com/oauth/request_token
+DEBUG:requests_oauthlib.oauth1_auth:Updated headers: {b'User-Agent': b'python-requests/2.25.1', b'Accept-Encoding': b'gzip, deflate', b'Accept': b'*/*', b'Connection': b'keep-alive', b'Content-Length': b'0', b'Authorization': b'OAuth oauth_nonce="97210409660482566621627975529", oauth_timestamp="1627975529", oauth_version="1.0", oauth_signature_method="HMAC-SHA1", oauth_consumer_key="FD5eYClWwPjaySPSfWK3JuYeU", oauth_signature="VqyK%2BKf1EA6akTJJnpXFaHEF6AY%3D"'}
+DEBUG:requests_oauthlib.oauth1_auth:Updated body: None
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.twitter.com:443
+DEBUG:urllib3.connectionpool:https://api.twitter.com:443 "POST /oauth/request_token HTTP/1.1" 200 128
+DEBUG:requests_oauthlib.oauth1_session:Decoding token from response "oauth_token=Jxa8YQAAAAABR-1AAAABewrnNI0&oauth_token_secret=aGo6mwFRI9hQa6yqzlGtENc36pz6r1cr&oauth_callback_confirmed=true"
+DEBUG:requests_oauthlib.oauth1_session:Obtained token {'oauth_token': 'Jxa8YQAAAAABR-1AAAABewrnNI0', 'oauth_token_secret': 'aGo6mwFRI9hQa6yqzlGtENc36pz6r1cr', 'oauth_callback_confirmed': 'true'}
+DEBUG:requests_oauthlib.oauth1_session:Updating internal client attributes from token data.
+DEBUG:requests_oauthlib.oauth1_session:Resetting callback_uri and realm (not needed in next phase).
+DEBUG:requests_oauthlib.oauth1_session:Adding parameters {'oauth_token': 'Jxa8YQAAAAABR-1AAAABewrnNI0'} to url https://api.twitter.com/oauth/authorize
+INFO:app:https://api.twitter.com/oauth/authorize?oauth_token=Jxa8YQAAAAABR-1AAAABewrnNI0
+INFO:werkzeug:127.0.0.1 - - [03/Aug/2021 12:55:29] "[32mGET /twitter_auth HTTP/1.1[0m" 302 -
+ERROR:werkzeug:127.0.0.1 - - [03/Aug/2021 12:55:33] code 400, message Bad request version ('úú\x13\x01\x13\x02\x13\x03À+À/À,À0Ì©Ì¨À\x13À\x14\x00\x9c\x00\x9d\x00/\x005\x01\x00\x01\x93JJ\x00\x00\x00\x17\x00\x00ÿ\x01\x00\x01\x00\x00')
+INFO:werkzeug:127.0.0.1 - - [03/Aug/2021 12:55:33] "[35m[1m  ü]BÀ)ÙZù=Ïo\x90+cÂÏ\x88|\x8ci\x87NÙÆÓxl  !aÀ7\x84z	óØ]á\x81,%²¨ï®¹\x86èËÇ	ÇID  úúÀ+À/À,À0Ì©Ì¨ÀÀ \x9c \x9d / 5 \x93JJ     ÿ   [0m" HTTPStatus.BAD_REQUEST -
+ERROR:werkzeug:127.0.0.1 - - [03/Aug/2021 12:55:33] code 400, message Bad request version ('½=7ík¯»=\x92öÐø©º\x84:¤\x11å\x9bV\x00')
+INFO:werkzeug:127.0.0.1 - - [03/Aug/2021 12:55:33] "[35m[1m  üÌq\x83ä©\ßúÇöÐ8¡0±^qëÕ5®5#\x80¸%ï ÝÐ²Uã~½=7ík¯»=\x92öÐø©º\x84:¤å\x9bV  [0m" HTTPStatus.BAD_REQUEST -
+ERROR:werkzeug:127.0.0.1 - - [03/Aug/2021 12:55:33] code 400, message Bad request syntax ('\x16\x03\x01\x02\x00\x01\x00\x01ü\x03\x03È$&Ñ6ÊHp')
+INFO:werkzeug:127.0.0.1 - - [03/Aug/2021 12:55:33] "[35m[1m  üÈ$&Ñ6ÊHp[0m" HTTPStatus.BAD_REQUEST -
+ERROR:werkzeug:127.0.0.1 - - [03/Aug/2021 12:55:33] code 400, message Bad request version ('ê·6\x15æM\x1b÷\x8d\x9e\x91\x00V\x00"ZZ\x13\x01\x13\x02\x13\x03À+À/À,À0Ì©Ì¨À\x13À\x14\x00\x9c\x00\x9d\x00/\x005\x00')
+INFO:werkzeug:127.0.0.1 - - [03/Aug/2021 12:55:33] "[35m[1m  ü²*¦°\x99\x88@HÀI(oÚ?[\x92rÖÇB¦ÑÙboé_s \x93FáñE¿EêtÝ@\x86%n\x9f +\x85ê·6æM÷\x8d\x9e\x91 V "ZZÀ+À/À,À0Ì©Ì¨ÀÀ \x9c \x9d / 5 [0m" HTTPStatus.BAD_REQUEST -
+ERROR:werkzeug:127.0.0.1 - - [03/Aug/2021 12:56:00] code 400, message Bad request version ('ºº\x13\x01\x13\x02\x13\x03À+À/À,À0Ì©Ì¨À\x13À\x14\x00\x9c\x00\x9d\x00/\x005\x01\x00\x01\x93')
+INFO:werkzeug:127.0.0.1 - - [03/Aug/2021 12:56:00] "[35m[1m  üT1\x8c#Ö~\x824)~¼¤tùèk[V·Þ0\x9dñÖ¥UhÔØ hC\x9ckc­4ö\x9a\x96é¬0Xb¡õÞW\x8ef!I¸ß9\x91â'  ººÀ+À/À,À0Ì©Ì¨ÀÀ \x9c \x9d / 5 \x93[0m" HTTPStatus.BAD_REQUEST -
+ERROR:werkzeug:127.0.0.1 - - [03/Aug/2021 12:56:00] code 400, message Bad request version ('êê\x13\x01\x13\x02\x13\x03À+À/À,À0Ì©Ì¨À\x13À\x14\x00\x9c\x00\x9d\x00/\x005\x01\x00\x01\x93jj\x00\x00\x00\x17\x00\x00ÿ\x01\x00\x01\x00\x00')
+INFO:werkzeug:127.0.0.1 - - [03/Aug/2021 12:56:00] "[35m[1m  ü\x9c·Ê)AØ¾ÇE\x82FÀßPnu°vdøùS\x8cM\x8d7x½ èÖ8MkhÀi?ÞÐ8\x91ðËmI²go+Âªs°T§r  êêÀ+À/À,À0Ì©Ì¨ÀÀ \x9c \x9d / 5 \x93jj     ÿ   [0m" HTTPStatus.BAD_REQUEST -
+ERROR:werkzeug:127.0.0.1 - - [03/Aug/2021 12:56:00] code 400, message Bad request version ('8\x00"\x8a\x8a\x13\x01\x13\x02\x13\x03À+À/À,À0Ì©Ì¨À\x13À\x14\x00\x9c\x00\x9d\x00/\x005\x00')
+INFO:werkzeug:127.0.0.1 - - [03/Aug/2021 12:56:00] "[35m[1m  ü¿«;\x89¤]\x9cWÎ\x91ïhgCÔ¸=^¢`&'¨A g4pm}èÅÇ\x99¹y\x9emeEïpì½}îlc´L"F°î}\x858 "\x8a\x8aÀ+À/À,À0Ì©Ì¨ÀÀ \x9c \x9d / 5 [0m" HTTPStatus.BAD_REQUEST -
+ERROR:werkzeug:127.0.0.1 - - [03/Aug/2021 12:56:00] code 400, message Bad request syntax ('\x16\x03\x01\x02\x00\x01\x00\x01ü\x03\x03\x9ffk6_ä.\\Óm\x04[ÔÉJÂûõê)Ã\x87·\x9aXW\x9b\x80ìÛ!')
+INFO:werkzeug:127.0.0.1 - - [03/Aug/2021 12:56:00] "[35m[1m  ü\x9ffk6_ä.\Óm[ÔÉJÂûõê)Ã\x87·\x9aXW\x9b\x80ìÛ![0m" HTTPStatus.BAD_REQUEST -
+INFO:werkzeug:127.0.0.1 - - [03/Aug/2021 12:56:17] "[32mGET / HTTP/1.1[0m" 302 -
+DEBUG:requests_oauthlib.oauth1_session:Fetching token from https://api.twitter.com/oauth/request_token using client <Client client_key=FD5eYClWwPjaySPSfWK3JuYeU, client_secret=****, resource_owner_key=None, resource_owner_secret=None, signature_method=HMAC-SHA1, signature_type=AUTH_HEADER, callback_uri=None, rsa_key=None, verifier=None, realm=None, encoding=utf-8, decoding=utf-8, nonce=None, timestamp=None>
+DEBUG:requests_oauthlib.oauth1_auth:Signing request <PreparedRequest [POST]> using client <Client client_key=FD5eYClWwPjaySPSfWK3JuYeU, client_secret=****, resource_owner_key=None, resource_owner_secret=None, signature_method=HMAC-SHA1, signature_type=AUTH_HEADER, callback_uri=None, rsa_key=None, verifier=None, realm=None, encoding=utf-8, decoding=utf-8, nonce=None, timestamp=None>
+DEBUG:requests_oauthlib.oauth1_auth:Including body in call to sign: False
+DEBUG:oauthlib.oauth1.rfc5849:Collected params: [('oauth_nonce', '143282137166227039691627975577'), ('oauth_timestamp', '1627975577'), ('oauth_version', '1.0'), ('oauth_signature_method', 'HMAC-SHA1'), ('oauth_consumer_key', 'FD5eYClWwPjaySPSfWK3JuYeU')]
+DEBUG:oauthlib.oauth1.rfc5849:Normalized params: oauth_consumer_key=FD5eYClWwPjaySPSfWK3JuYeU&oauth_nonce=143282137166227039691627975577&oauth_signature_method=HMAC-SHA1&oauth_timestamp=1627975577&oauth_version=1.0
+DEBUG:oauthlib.oauth1.rfc5849:Normalized URI: https://api.twitter.com/oauth/request_token
+DEBUG:oauthlib.oauth1.rfc5849:Signing: signature base string: POST&https%3A%2F%2Fapi.twitter.com%2Foauth%2Frequest_token&oauth_consumer_key%3DFD5eYClWwPjaySPSfWK3JuYeU%26oauth_nonce%3D143282137166227039691627975577%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1627975577%26oauth_version%3D1.0
+DEBUG:oauthlib.oauth1.rfc5849:Signature: QFtDWCGZf+Ghy4CxcO2gNk57x5k=
+DEBUG:oauthlib.oauth1.rfc5849:Encoding URI, headers and body to utf-8.
+DEBUG:requests_oauthlib.oauth1_auth:Updated url: https://api.twitter.com/oauth/request_token
+DEBUG:requests_oauthlib.oauth1_auth:Updated headers: {b'User-Agent': b'python-requests/2.25.1', b'Accept-Encoding': b'gzip, deflate', b'Accept': b'*/*', b'Connection': b'keep-alive', b'Content-Length': b'0', b'Authorization': b'OAuth oauth_nonce="143282137166227039691627975577", oauth_timestamp="1627975577", oauth_version="1.0", oauth_signature_method="HMAC-SHA1", oauth_consumer_key="FD5eYClWwPjaySPSfWK3JuYeU", oauth_signature="QFtDWCGZf%2BGhy4CxcO2gNk57x5k%3D"'}
+DEBUG:requests_oauthlib.oauth1_auth:Updated body: None
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.twitter.com:443
+DEBUG:urllib3.connectionpool:https://api.twitter.com:443 "POST /oauth/request_token HTTP/1.1" 200 128
+DEBUG:requests_oauthlib.oauth1_session:Decoding token from response "oauth_token=GgS0MQAAAAABR-1AAAABewrn8aI&oauth_token_secret=UXNXpzAmqf182VY2jlmTtv0p0y1OjVf0&oauth_callback_confirmed=true"
+DEBUG:requests_oauthlib.oauth1_session:Obtained token {'oauth_token': 'GgS0MQAAAAABR-1AAAABewrn8aI', 'oauth_token_secret': 'UXNXpzAmqf182VY2jlmTtv0p0y1OjVf0', 'oauth_callback_confirmed': 'true'}
+DEBUG:requests_oauthlib.oauth1_session:Updating internal client attributes from token data.
+DEBUG:requests_oauthlib.oauth1_session:Resetting callback_uri and realm (not needed in next phase).
+DEBUG:requests_oauthlib.oauth1_session:Adding parameters {'oauth_token': 'GgS0MQAAAAABR-1AAAABewrn8aI'} to url https://api.twitter.com/oauth/authorize
+INFO:app:https://api.twitter.com/oauth/authorize?oauth_token=GgS0MQAAAAABR-1AAAABewrn8aI
+INFO:werkzeug:127.0.0.1 - - [03/Aug/2021 12:56:18] "[32mGET /twitter_auth HTTP/1.1[0m" 302 -
+ERROR:werkzeug:127.0.0.1 - - [03/Aug/2021 12:56:26] code 400, message Bad request version ('ÚÚ\x13\x01\x13\x02\x13\x03À+À/À,À0Ì©Ì¨À\x13À\x14\x00\x9c\x00\x9d\x00/\x005\x01\x00\x01\x93JJ\x00\x00\x00\x17\x00\x00ÿ\x01\x00\x01\x00\x00')
+INFO:werkzeug:127.0.0.1 - - [03/Aug/2021 12:56:26] "[35m[1m  üò\x82È,ã&ÆÚóÉ{õL>\x92\x8b¡ùùõbâZiCûAÔ ­QXÀ\x87L]:\x9cÍ{Dõ©\x8eàÀL¶H@»Ë£~´ô\n  ÚÚÀ+À/À,À0Ì©Ì¨ÀÀ \x9c \x9d / 5 \x93JJ     ÿ   [0m" HTTPStatus.BAD_REQUEST -
+ERROR:werkzeug:127.0.0.1 - - [03/Aug/2021 12:56:26] code 400, message Bad request version ('#þT÷?Õ\x7fÑ£\x9ea\x90î2¨&8)\x00"**\x13\x01\x13\x02\x13\x03À+À/À,À0Ì©Ì¨À\x13À\x14\x00\x9c\x00\x9d\x00/\x005\x00')
+INFO:werkzeug:127.0.0.1 - - [03/Aug/2021 12:56:26] "[35m[1m  üUyN~Æü0Åzõ&kñÙ\ÞÉì!3­$¤òµIo y  ®W \x93ÄTÔWF#þT÷?ÕÑ£\x9ea\x90î2¨&8) "**À+À/À,À0Ì©Ì¨ÀÀ \x9c \x9d / 5 [0m" HTTPStatus.BAD_REQUEST -

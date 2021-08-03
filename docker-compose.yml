@@ -1,0 +1,20 @@
+version: '3'
+
+services: 
+    app:
+        build: .
+        image: python:3.8.11-slim-buster
+        container_name: saama_app 
+        ports: 
+            - "4455:4455"
+        environment: 
+            - SECRET_KEY="${SECRET_KEY}"
+            - API_KEY="${API_KEY}"
+            - API_SECRET="${API_SECRET}"
+            - ACCESS_TOKEN="${ACCESS_TOKEN}"
+            - ACCESS_SECRET="${ACCESS_SECRET}"
+        expose:
+            - "4455" 
+
+
+
