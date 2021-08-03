@@ -150,14 +150,14 @@ def twitter():
 
 
 @app.route('/data')
-# @login_required
+@login_required
 def data():
     app.logger.info('All user timeline tweets fetched')
     return {'data': [user.to_dict() for user in User.query]}
 
 
 @app.route('/search', methods=['GET'])
-# @login_required
+@login_required
 def search():   
     tweet = request.args.get('search')
     query = User.query.filter_by(tweet=tweet).first_or_404()
@@ -165,7 +165,7 @@ def search():
 
 
 @app.route('/sort', methods=['GET'])
-# @login_required
+@login_required
 def sort():
     try:
         column_name=request.args.get('column_name')
